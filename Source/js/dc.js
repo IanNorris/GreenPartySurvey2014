@@ -865,9 +865,9 @@ dc.baseMixin = function (_chart) {
     };
 
     function generateSvg() {
-        _svg = _chart.root().append("svg")
+        _svg = _chart.root().insert( "svg", ".clearfix" )
             .attr("width", _chart.width())
-            .attr("height", _chart.height());
+            .attr("height", _chart.height() + 10); /*add on a bit of extra space so that when we select an item the bottom doesn't get cut off*/
         return _svg;
     }
 
@@ -894,16 +894,18 @@ dc.baseMixin = function (_chart) {
     **/
     _chart.turnOnControls = function () {
         if (_root) {
-            _chart.selectAll(".reset").style("display", null);
-            _chart.selectAll(".filter").text(_filterPrinter(_chart.filters())).style("display", null);
+            _chart.selectAll(".resetParent").style("visibility", "visible");
+            _chart.selectAll(".reset").style("visibility", "visible");
+            _chart.selectAll(".filter").text(_filterPrinter(_chart.filters())).style("visibility", "visible");
         }
         return _chart;
     };
 
     _chart.turnOffControls = function () {
         if (_root) {
-            _chart.selectAll(".reset").style("display", "none");
-            _chart.selectAll(".filter").style("display", "none").text(_chart.filter());
+            _chart.selectAll(".resetParent").style("visibility", "hidden");
+            _chart.selectAll(".reset").style("visibility", "hidden");
+            _chart.selectAll(".filter").style("visibility", "hidden").text(_chart.filter());
         }
         return _chart;
     };

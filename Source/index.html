@@ -155,7 +155,9 @@
 		<div class="dot"></div>
 		<div class="dot"></div>
 	</div>
+
 	<a href="https://github.com/IanNorris/GreenPartySurvey2014"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+
 	<div class="container mainContent">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/dc.css" />
@@ -165,7 +167,7 @@
 			.sidebar
 			{
 				position: fixed;
-				top: 51px;
+				top: 5em;
 				bottom: 0;
 				left: 0;
 				z-index: 1000;
@@ -175,43 +177,71 @@
 				overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 			}
 		</style>
-		<h2>Green Party Survey May 2014 - Results</h2>
-		<br /><br />
+		<h1>Green Party Survey May 2014 - Results</h1>
 
 		<div class="row">
 			<div class="col-md-2 sidebar">
 				<ul class="nav nav-pills nav-stacked">
-					<li class="menu active"><a href="#Introduction">Introduction</a></li>
-					<li class="menu"><a href="#Summary">Summary</a></li>
-					<li class="menu"><a href="#">Messages</a></li>
+					<li class="menu active"><a data-scroll="Introduction">Introduction</a></li>
+					<li class="menu"><a data-scroll="Summary">Summary</a></li>
+					<li class="menu"><a data-scroll="Demographics">Demographics</a></li>
 					<li class="nav-divider"></li>
 					<li><a href="javascript:dc.filterAll(); dc.renderAll();">Reset all graphs</a></li>
 				</ul>
 
 				<div>
-					
+
 				</div>
 			</div>
-			<div class="col-md-10 col-md-offset-2">
-				<h3><a name="Introduction">Introduction</a></h3>
+			<div class="col-md-10 col-md-offset-2 wrapper">
 
-				<p>
-					These are the results of an unofficial survey to investigate the reasons why people are and are not voting Green.
-					It was created by Green Party members, but not in an official capacity. There were 314 responses, the majority of which
-					came from social media such as Reddit, Facebook and Twitter. For this reason the survey is not fully representative of
-					the population however is good enough to be able to draw certain conclusions. These will be outlined below.
-				</p>
+				<section id="Introduction" data-anchor="Introduction">
+					<h3>Introduction</h3>
+
+					<p>
+						These are the results of an unofficial survey to investigate the reasons why people are and are not voting Green.
+						It was created by Green Party members, but not in an official capacity. There were 314 responses, the majority of which
+						came from social media such as Reddit, Facebook and Twitter. For this reason the survey is not fully representative of
+						the population however is good enough to be able to draw certain conclusions. These will be outlined below.
+					</p>
+				</section>
+
+				<section id="Summary" data-anchor="Summary">
+					<h3>Summary</h3>
+
+					<p>Summary goes here</p>
+				</section>
+
+				<section id="Demographics" data-anchor="Demographics">
+					<h3>Demographics</h3>
+
+					<p>Demographics go here</p>
+				</section>
 
 
-				<h3><a name="Summary">Summary</a></h3>
-
-				<div id="wantGreenToWin">
-					<strong>Respondents that would want Green to win a General Election</strong>
-					<a class="reset" href="javascript:graphs[ 'Want Green to win GE' ].filterAll();dc.redrawAll();" style="display: none;">reset</a>
-					<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>
-					<div class="clearfix"></div>
+				<div class="drop-shadow">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Would you want the Green Party to win a General Election?</h3>
+						</div>
+						<div class="panel-body">
+							<div id="wantGreenToWin">
+								<div class="clearfix"></div>
+								<span class="resetParent label label-filter">
+									<a class="reset" href="javascript:graphs[ 'Want Green to win GE' ].filterAll();dc.redrawAll();">reset</a>
+									<span class="reset"> | Current filter: <span class="filter"></span></span>
+								</span>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="panel-footer">
+							This chart illustrates whether the respondents would like the Green Party to win a General Election.
+							Respondents that chose 'Yes, if changes are made' are those who are currently voting No, but indicated they may potentially change
+							their voting intentions if a few policy alterations were made. To see what these policies are, click the
+							pie chart slice and it will only show results from these responses.
+						</div>
+					</div>
 				</div>
-				<div class="clearfix"></div>
 
 				<div id="closestMatchingParty">
 					<strong>Closest matching party</strong>
@@ -281,7 +311,7 @@
 					<div class="clearfix"></div>
 				</div>
 				<div class="clearfix"></div>
-				
+
 			</div>
 		</div>
 	</div>
@@ -516,13 +546,44 @@
 
 			dc.renderAll();
 
-			$('.nav-pills li.menu a').click(
+			/*$('.nav-pills li.menu a').click(
 				function()
 				{
 					$("li.active").removeClass("active");
 					$(this).parent('li').addClass('active');
 				}
-			);
+			);*/
+
+			$('.nav-pills li.menu a').on('click', function () {
+
+				var scrollAnchor = $(this).attr('data-scroll');
+				var scrollPoint = $('section[data-anchor="' + scrollAnchor + '"]').offset().top - 20;
+
+				$(".nav-pills li.active").removeClass("active");
+				$(this).parent('li').addClass('active');
+
+				$('body,html').animate(
+					{
+						scrollTop: scrollPoint
+					},
+					500
+				);
+
+				return false;
+
+			})
+
+
+			$(window).scroll(function () {
+				var windscroll = $(window).scrollTop();
+				$('.wrapper section').each(function (i) {
+					if ($(this).position().top <= windscroll - 20) {
+						$('.nav-pills li.menu').removeClass('active');
+						$('.nav-pills li.menu a[data-scroll=' + $(this).attr('data-anchor') + ']').parent('li').addClass('active');
+					}
+				});
+
+			}).scroll();
 
 			$('.loader').hide();
 			$('.mainContent').show();
@@ -543,6 +604,16 @@
 		{
 			text-decoration: none !important;
 		}
+
+		.drop-shadow
+		{
+			margin-top: .5em;
+			-moz-box-shadow:10px 5px 15px rgba(0,0,0,.5); 
+			-webkit-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+			box-shadow: 10px 5px 15px rgba(0,0,0,.5); /*10px is horizontal offset, 5px is vertical offset, 15px is blur radius and rgba(0,0,0,.5) is shadow color*/
+			margin-bottom: 30px;
+		}
 	</style>
 </body>
+
 </html>

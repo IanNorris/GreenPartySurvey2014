@@ -306,3 +306,20 @@ div.dc-chart {
     pointer-events: all;
     cursor: pointer;
 }
+
+.reset,.resetParent
+{
+    visibility: hidden;
+}
+
+.label-filter
+{
+    background-color: #c6dbef;
+    color: black;
+    font-size: small;
+}
+
+.label-filter a
+{
+    color: mediumblue;
+}
