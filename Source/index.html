@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Green Party Survey May 2014 - Results</title>
-    <meta charset="UTF-8">
+	<title>Green Party Survey May 2014 - Results</title>
+	<meta charset="UTF-8">
 	
 	<style>
 		body{ background-color: honeydew !important; }
@@ -155,9 +155,9 @@
 <div class="container mainContent">
 
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/dc.css"/>
+	<link rel="stylesheet" type="text/css" href="css/dc.css"/>
 
-    <h2>Green Party Survey May 2014 - Results</h2>
+	<h2>Green Party Survey May 2014 - Results</h2>
 	<br/><br/>
 	
 	<div class="row">
@@ -366,7 +366,7 @@
 	function createPieChart( divName, data, columnName, slices )
 	{
 		var dimension = data.dimension( function (d) { return d[ columnName ]; } );
-        var group = dimension.group().reduceSum( function (d) { return 1; } );
+		var group = dimension.group().reduceSum( function (d) { return 1; } );
 		
 		group.all = function()
 		{
@@ -398,7 +398,7 @@
 	function createAgeChart( divName, data, columnName )
 	{
 		var dimension = data.dimension( function (d) { return d[ columnName ]; } );
-        var group = dimension.group().reduceSum( function (d) { return 1; } );
+		var group = dimension.group().reduceSum( function (d) { return 1; } );
 		
 		var chart = dc.barChart( divName );
 		graphs[ columnName ] = chart;
@@ -413,9 +413,9 @@
 				;
 	}
 
-    var numberFormat = d3.format(".2f");
+	var numberFormat = d3.format(".2f");
 
-    d3.csv("all.csv", function (csv)
+	d3.csv("all.csv", function (csv)
 	{
 		for( index = 0; index < csv.length; index++ )
 		{
@@ -434,7 +434,7 @@
 			}
 		}
 	
-        var data = crossfilter(csv);
+		var data = crossfilter(csv);
 		
 		createPieChart( "#wantGreenToWin", data, 'Want Green to win GE', 4 );
 		createPieChart( "#closestMatchingParty", data, 'Closest matching party', 6 );
@@ -451,7 +451,7 @@
 		
 		$('.loader').hide();
 		$('.mainContent').show();
-    });
+	});
 </script>
 
 <style>
