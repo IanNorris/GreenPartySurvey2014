@@ -10,536 +10,539 @@
 	</style>
 </head>
 <body>
-
-<style>
-* {
-  -webkit-box-sizing: border-box;
-	 -moz-box-sizing: border-box;
-		  box-sizing: border-box;
-}
-
-
-/* The loader container */
-.loader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  
-  width: 200px;
-  height: 200px;
-  
-  margin-top: -100px;
-  margin-left: -100px;
-  
-  perspective: 200px;
-  transform-type: preserve-3d;
- }
+	<style>
+		*
+		{
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
 
 
-/* The dot */
-.dot {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+		/* The loader container */
+		.loader
+		{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 200px;
+			height: 200px;
+			margin-top: -100px;
+			margin-left: -100px;
+			perspective: 200px;
+			transform-type: preserve-3d;
+		}
 
-  width: 120px;
-  height: 120px;
-  
-  margin-top: -60px;
-  margin-left: -60px;
-  
-  border-radius: 100px;
-  border: 40px outset #1e3f57;
 
-  transform-type: preserve-3d;
-  transform-origin: 50% 50%;
-  
-  transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
-  
-  background-color: transparent;
-  
-  -webkit-animation: dot1 1000ms cubic-bezier(.49,.06,.43,.85) infinite;
-}
+		/* The dot */
+		.dot
+		{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 120px;
+			height: 120px;
+			margin-top: -60px;
+			margin-left: -60px;
+			border-radius: 100px;
+			border: 40px outset #1e3f57;
+			transform-type: preserve-3d;
+			transform-origin: 50% 50%;
+			transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+			background-color: transparent;
+			-webkit-animation: dot1 1000ms cubic-bezier(.49,.06,.43,.85) infinite;
+		}
 
-.dot:nth-child(2) {
-  width: 140px;
-  height: 140px;
-  
-  margin-top: -70px;
-  margin-left: -70px;
-  
-  border-width: 30px;
-  border-color: #447891;
-  
-  -webkit-animation-name: dot2;
-  -webkit-animation-delay: 75ms;
-  
-  box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.1);
-  transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
-}
+			.dot:nth-child(2)
+			{
+				width: 140px;
+				height: 140px;
+				margin-top: -70px;
+				margin-left: -70px;
+				border-width: 30px;
+				border-color: #447891;
+				-webkit-animation-name: dot2;
+				-webkit-animation-delay: 75ms;
+				box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.1);
+				transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+			}
 
-.dot:nth-child(3) {
-  width: 160px;
-  height: 160px;
-  
-  margin-top: -80px;
-  margin-left: -80px;
-  
-  border-width: 20px;
-  border-color: #6bb2cd;
-  
-  -webkit-animation-name: dot3;
-  -webkit-animation-delay: 150ms;
-  
-  box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.1);
-  transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
-}
+			.dot:nth-child(3)
+			{
+				width: 160px;
+				height: 160px;
+				margin-top: -80px;
+				margin-left: -80px;
+				border-width: 20px;
+				border-color: #6bb2cd;
+				-webkit-animation-name: dot3;
+				-webkit-animation-delay: 150ms;
+				box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.1);
+				transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+			}
 
-@-webkit-keyframes dot1 {
-  0% {
-	border-color: #1e3f57;
-	transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
-  }
-  50% {
-	border-color: #1e574f;
-	transform: rotateX(20deg) rotateY(20deg) rotateZ(50deg) translateZ(0px);
-  }
-  100% {
-	border-color: #1e3f57;
-	transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
-  }
-}
+		@-webkit-keyframes dot1
+		{
+			0%
+			{
+				border-color: #1e3f57;
+				transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+			}
 
-@-webkit-keyframes dot2 {
-  0% {
-	border-color: #447891;
-	box-shadow: inset 0 0 15px 0 rgba(255, 255, 255, 0.2);
-	transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
-  }
-  50% {
-	border-color: #449180;
-	box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.8);
-	transform: rotateX(20deg) rotateY(20deg) rotateZ(50deg) translateZ(0px);
-  }
-  100% {
-	border-color: #447891;
-	box-shadow: inset 0 0 15px 0 rgba(255, 255, 255, 0.2);
-	transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
-  }
-}
+			50%
+			{
+				border-color: #1e574f;
+				transform: rotateX(20deg) rotateY(20deg) rotateZ(50deg) translateZ(0px);
+			}
 
-@-webkit-keyframes dot3 {
-  0% {
-	border-color: #6bb2cd;
-	box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.1);
-	transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
-  }
-  50% {
-	border-color: #6bcdb2;
-	box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.8);
-	transform: rotateX(20deg) rotateY(20deg) rotateZ(50deg) translateZ(0px);
-  }
-  100% {
-	border-color: #6bb2cd;
-	box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.1);
-	transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
-  }
-}
-</style>
-<div class="loader">
-  <div class="dot"></div>
-  <div class="dot"></div>
-  <div class="dot"></div>
-</div>
+			100%
+			{
+				border-color: #1e3f57;
+				transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+			}
+		}
 
-<a href="https://github.com/IanNorris/GreenPartySurvey2014"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+		@-webkit-keyframes dot2
+		{
+			0%
+			{
+				border-color: #447891;
+				box-shadow: inset 0 0 15px 0 rgba(255, 255, 255, 0.2);
+				transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+			}
 
-<div class="container mainContent">
+			50%
+			{
+				border-color: #449180;
+				box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.8);
+				transform: rotateX(20deg) rotateY(20deg) rotateZ(50deg) translateZ(0px);
+			}
 
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/dc.css"/>
+			100%
+			{
+				border-color: #447891;
+				box-shadow: inset 0 0 15px 0 rgba(255, 255, 255, 0.2);
+				transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+			}
+		}
 
-	<h2>Green Party Survey May 2014 - Results</h2>
-	<br/><br/>
-	
-	<div class="row">
-		<div class="col-md-2">
-			<ul class="nav nav-pills nav-stacked">
-			  <li class="active"><a href="#">Introduction</a></li>
-			  <li><a href="#">Profile</a></li>
-			  <li><a href="#">Messages</a></li>
-			</ul>
-		</div>
-		<div class="col-md-10">
-			<p class="lead">These are the results of an unofficial survey to investigate the reasons why people are and are not voting Green. It was created by Green Party members, but not in an official capacity. There were 314 responses, the majority of which came from social media such as Reddit, Facebook and Twitter. For this reason the survey is not fully representative of the population however is good enough to be able to draw certain conclusions. These will be outlined below.</p>
+		@-webkit-keyframes dot3
+		{
+			0%
+			{
+				border-color: #6bb2cd;
+				box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.1);
+				transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+			}
 
-			<div id="wantGreenToWin">
-				<strong>Respondents that would want Green to win a General Election</strong>
-				<a class="reset" href="javascript:graphs[ 'Want Green to win GE' ].filterAll();dc.redrawAll();" style="display: none;">reset</a>
-				<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>
+			50%
+			{
+				border-color: #6bcdb2;
+				box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.8);
+				transform: rotateX(20deg) rotateY(20deg) rotateZ(50deg) translateZ(0px);
+			}
 
-				<div class="clearfix"></div>
+			100%
+			{
+				border-color: #6bb2cd;
+				box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.1);
+				transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+			}
+		}
+	</style>
+	<div class="loader">
+		<div class="dot"></div>
+		<div class="dot"></div>
+		<div class="dot"></div>
+	</div>
+	<a href="https://github.com/IanNorris/GreenPartySurvey2014"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+	<div class="container mainContent">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/dc.css" />
+		<link rel="stylesheet/less" type="text/css" href="less/variables.less" />
+		<link rel="stylesheet/less" type="text/css" href="less/bootswatch.less" />
+		<style>
+			.sidebar
+			{
+				position: fixed;
+				top: 51px;
+				bottom: 0;
+				left: 0;
+				z-index: 1000;
+				display: block;
+				padding: 20px;
+				overflow-x: hidden;
+				overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+			}
+		</style>
+		<h2>Green Party Survey May 2014 - Results</h2>
+		<br /><br />
+
+		<div class="row">
+			<div class="col-md-2 sidebar">
+				<ul class="nav nav-pills nav-stacked">
+					<li class="menu active"><a href="#Introduction">Introduction</a></li>
+					<li class="menu"><a href="#Summary">Summary</a></li>
+					<li class="menu"><a href="#">Messages</a></li>
+					<li class="nav-divider"></li>
+					<li><a href="javascript:dc.filterAll(); dc.renderAll();">Reset all graphs</a></li>
+				</ul>
+
+				<div>
+					
+				</div>
 			</div>
-			<div class="clearfix"></div>
-			
-			<div id="closestMatchingParty">
-				<strong>Closest matching party</strong>
-				<a class="reset" href="javascript:graphs[ 'Closest matching party' ].filterAll();dc.redrawAll();" style="display: none;">reset</a>
-				<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>
+			<div class="col-md-10 col-md-offset-2">
+				<h3><a name="Introduction">Introduction</a></h3>
 
+				<p>
+					These are the results of an unofficial survey to investigate the reasons why people are and are not voting Green.
+					It was created by Green Party members, but not in an official capacity. There were 314 responses, the majority of which
+					came from social media such as Reddit, Facebook and Twitter. For this reason the survey is not fully representative of
+					the population however is good enough to be able to draw certain conclusions. These will be outlined below.
+				</p>
+
+
+				<h3><a name="Summary">Summary</a></h3>
+
+				<div id="wantGreenToWin">
+					<strong>Respondents that would want Green to win a General Election</strong>
+					<a class="reset" href="javascript:graphs[ 'Want Green to win GE' ].filterAll();dc.redrawAll();" style="display: none;">reset</a>
+					<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>
+					<div class="clearfix"></div>
+				</div>
 				<div class="clearfix"></div>
-			</div>
-			<div class="clearfix"></div>
-			
-			<div id="referer">
-				<strong>Referer</strong>
-				<a class="reset" href="javascript:graphs[ 'Origin' ].filterAll();dc.redrawAll();" style="display: none;">reset</a>
-				<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>
 
+				<div id="closestMatchingParty">
+					<strong>Closest matching party</strong>
+					<a class="reset" href="javascript:graphs[ 'Closest matching party' ].filterAll();dc.redrawAll();" style="display: none;">reset</a>
+					<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>
+					<div class="clearfix"></div>
+				</div>
 				<div class="clearfix"></div>
-			</div>
-			<div class="clearfix"></div>
 
-			<div id="importantPolicies">
-				<strong>Policies that are important to you</strong>
-				<a class="reset" href="javascript:graphs[ 'Important policies' ].filterAll();dc.redrawAll();" style="display: none;">reset</a>
-				<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>
-
+				<div id="referer">
+					<strong>Referer</strong>
+					<a class="reset" href="javascript:graphs[ 'Origin' ].filterAll();dc.redrawAll();" style="display: none;">reset</a>
+					<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>
+					<div class="clearfix"></div>
+				</div>
 				<div class="clearfix"></div>
-			</div>
-			<div class="clearfix"></div>
-			
-			<div id="approvalPolicies">
-				<strong>Policies that you approve of</strong>
-				<a class="reset" href="javascript:graphs[ 'Approval policies' ].filterAll();dc.redrawAll();" style="display: none;">reset</a>
-				<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>
-
+				<div id="importantPolicies">
+					<strong>Policies that are important to you</strong>
+					<a class="reset" href="javascript:graphs[ 'Important policies' ].filterAll();dc.redrawAll();" style="display: none;">reset</a>
+					<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>
+					<div class="clearfix"></div>
+				</div>
 				<div class="clearfix"></div>
-			</div>
-			<div class="clearfix"></div>
-			
-			<div id="againstPolicies">
-				<strong>Policies that you are against</strong>
-				<a class="reset" href="javascript:graphs[ 'Against policies' ].filterAll();dc.redrawAll();" style="display: none;">reset</a>
-				<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>
 
+				<div id="approvalPolicies">
+					<strong>Policies that you approve of</strong>
+					<a class="reset" href="javascript:graphs[ 'Approval policies' ].filterAll();dc.redrawAll();" style="display: none;">reset</a>
+					<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>
+					<div class="clearfix"></div>
+				</div>
 				<div class="clearfix"></div>
-			</div>
-			<div class="clearfix"></div>
-			
-			<div id="keyIssues">
-				<strong>Specifically named key issues</strong>
-				<a class="reset" href="javascript:graphs[ 'Key issues by name' ].filterAll();dc.redrawAll();" style="display: none;">reset</a>
-				<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>
 
+				<div id="againstPolicies">
+					<strong>Policies that you are against</strong>
+					<a class="reset" href="javascript:graphs[ 'Against policies' ].filterAll();dc.redrawAll();" style="display: none;">reset</a>
+					<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>
+					<div class="clearfix"></div>
+				</div>
 				<div class="clearfix"></div>
-			</div>
-			<div class="clearfix"></div>
 
-			<div id="unsolicitedPositive">
-				<strong>Unsolicited positive feedback</strong>
-				<a class="reset" href="javascript:graphs[ 'Unsolicited positive feedback' ].filterAll();dc.redrawAll();" style="display: none;">reset</a>
-				<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>
-
+				<div id="keyIssues">
+					<strong>Specifically named key issues</strong>
+					<a class="reset" href="javascript:graphs[ 'Key issues by name' ].filterAll();dc.redrawAll();" style="display: none;">reset</a>
+					<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>
+					<div class="clearfix"></div>
+				</div>
 				<div class="clearfix"></div>
-			</div>
-			<div class="clearfix"></div>
-
-			<div id="unsolicitedNegative">
-				<strong>Unsolicited negative feedback</strong>
-				<a class="reset" href="javascript:graphs[ 'Unsolicited negative feedback' ].filterAll();dc.redrawAll();" style="display: none;">reset</a>
-				<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>
-
+				<div id="unsolicitedPositive">
+					<strong>Unsolicited positive feedback</strong>
+					<a class="reset" href="javascript:graphs[ 'Unsolicited positive feedback' ].filterAll();dc.redrawAll();" style="display: none;">reset</a>
+					<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>
+					<div class="clearfix"></div>
+				</div>
 				<div class="clearfix"></div>
-			</div>
-			<div class="clearfix"></div>
-			
-			<div id="age">
-				<strong>Age</strong>
-				<a class="reset" href="javascript:graphs[ 'Age' ].filterAll();dc.redrawAll();" style="display: none;">reset</a>
-				<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>
-
+				<div id="unsolicitedNegative">
+					<strong>Unsolicited negative feedback</strong>
+					<a class="reset" href="javascript:graphs[ 'Unsolicited negative feedback' ].filterAll();dc.redrawAll();" style="display: none;">reset</a>
+					<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>
+					<div class="clearfix"></div>
+				</div>
 				<div class="clearfix"></div>
-			</div>
-			<div class="clearfix"></div>
 
-			<div>
-				<a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+				<div id="age">
+					<strong>Age</strong>
+					<a class="reset" href="javascript:graphs[ 'Age' ].filterAll();dc.redrawAll();" style="display: none;">reset</a>
+					<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+				
 			</div>
 		</div>
 	</div>
-</div>
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/d3.js"></script>
+	<script type="text/javascript" src="js/crossfilter.js"></script>
+	<script type="text/javascript" src="js/dc.js"></script>
+	<script type="text/javascript" src="js/less-1.7.3.min.js"></script>
+	<script type="text/javascript">
 
-<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/d3.js"></script>
-<script type="text/javascript" src="js/crossfilter.js"></script>
-<script type="text/javascript" src="js/dc.js"></script>
+		var graphWidth = 800;
+		var graphBarHeight = 1000;
+		var graphHeight = 500;
 
-<script type="text/javascript">
+		var graphs = {};
 
-	var graphWidth = 800;
-	var graphBarHeight = 1000;
-	var graphHeight = 500;
-
-	var graphs = {};
-	
-	function isNumber(n)
-	{
-		return !isNaN(parseFloat(n)) && isFinite(n);
-	}
-
-	function reduceSum(attr)
-	{
-	  var functions = 
-	  {
-		add: function(p, v)
-		{
-			if( v.hasOwnProperty(attr) )
-			{
-				v[attr].forEach( 
-					function( val, index )
-					{
-						p[val] = (p[val] || 0) + 1;
-					}
-				);
-			}
-			
-			return p;
-		},
-		remove: function(p, v)
-		{
-			if( v.hasOwnProperty(attr) )
-			{
-				v[attr].forEach( 
-					function( val, index )
-					{
-						p[val] = (p[val] || 0) - 1;
-					}
-				);
-			}
-			
-			return p;
-		},
-		init: function()
-		{
-		  return {};
+		function isNumber(n) {
+			return !isNaN(parseFloat(n)) && isFinite(n);
 		}
-	  };
-	  return functions;
-	}
-	
-	function reduceSumGroup( dim, val )
-	{
-		var rs = reduceSum( val );
-		var group = dim.groupAll().reduce(rs.add, rs.remove, rs.init).value();
-		
-		group.all = function()
-		{
-			var newObject = [];
-			for (var key in this) {
-				if (this.hasOwnProperty(key) && key != "all") {
-				  newObject.push({
-					key: key,
-					value: this[key]
-				  });
-				}
-			}
-			return newObject;
-		};
-		
-		return group;
-	}
-	
-	function createCategoryGraph( divName, data, columnName )
-	{
-		var chart = dc.rowChart( divName );
-		
-		var dimension = data.dimension( function (d) { return d[ columnName ]; } );
-		var group = reduceSumGroup( dimension, columnName );
-		
-		chart
-			.width( graphWidth )
-			.height( graphBarHeight )
-			.dimension( dimension )
-			.group( group )
-			.ordering( function(d) { return -d.value; } )
-			.filterHandler(
-				function (dimension, filters)
-				{
-					dimension.filter(null);
-					
-					if (filters.length === 0)
-					{
-						dimension.filter(null);
-					}
-					else
-					{
-						dimension.filterFunction(function (d)
-						{
-							if( d )
-							{
-								for (var i=0; i < d.length; i++)
-								{
-									if (filters.indexOf(d[i]) >= 0)
-									{
-										return true;
-									}
-								}
+
+		function reduceSum(attr) {
+			var functions =
+			{
+				add: function (p, v) {
+					if (v.hasOwnProperty(attr)) {
+						v[attr].forEach(
+							function (val, index) {
+								p[val] = (p[val] || 0) + 1;
 							}
-							return false; 
+						);
+					}
+
+					return p;
+				},
+				remove: function (p, v) {
+					if (v.hasOwnProperty(attr)) {
+						v[attr].forEach(
+							function (val, index) {
+								p[val] = (p[val] || 0) - 1;
+							}
+						);
+					}
+
+					return p;
+				},
+				init: function () {
+					return {};
+				}
+			};
+			return functions;
+		}
+
+		function reduceSumGroup(dim, val) {
+			var rs = reduceSum(val);
+			var group = dim.groupAll().reduce(rs.add, rs.remove, rs.init).value();
+
+			group.all = function () {
+				var newObject = [];
+				for (var key in this) {
+					if (this.hasOwnProperty(key) && key != "all") {
+						newObject.push({
+							key: key,
+							value: this[key]
 						});
 					}
-
-					return filters; 
-				  }
-			)
-			;
-			
-		graphs[ columnName ] = chart;
-	}
-	
-	function createPieChart( divName, data, columnName, slices )
-	{
-		var dimension = data.dimension( function (d) { return d[ columnName ]; } );
-		var group = dimension.group().reduceSum( function (d) { return 1; } );
-		
-		group.all = function()
-		{
-			var newObject = [];
-			for (var key in this) {
-				if (this.hasOwnProperty(key) && key != "all") {
-				  newObject.push({
-					key: key,
-					value: this[key]
-				  });
 				}
-			}
-			return newObject;
-		};
-		
-		var chart = dc.pieChart( divName );
-		graphs[ columnName ] = chart;
-		chart
-				.width( graphWidth )
-				.height( graphHeight )
-				.slicesCap( slices )
-				.innerRadius(50)
-				.legend(dc.legend())
-				.dimension(dimension)
-				.group(group)
-				;
-	}
-	
-	function createAgeChart( divName, data, columnName )
-	{
-		var dimension = data.dimension( function (d) { return d[ columnName ]; } );
-		var group = dimension.group().reduceSum( function (d) { return 1; } );
-		
-		var chart = dc.barChart( divName );
-		graphs[ columnName ] = chart;
-		chart
-				.width( graphWidth )
-				.height( graphHeight )
-				.x(d3.scale.linear().domain([14, 80]))
-				.xAxisLabel("Age")
-				.yAxisLabel("Count")
-				.dimension(dimension)
-				.group(group)
-				;
-	}
+				return newObject;
+			};
 
-	var numberFormat = d3.format(".2f");
-
-	var fieldsToCondenseAgainst =
-	[
-		"Pro nuclear",
-		"Pro GM",
-		"Practicality of financial policy",
-		"Lack of experience",
-		"Unscientific",
-		"Animal testing",
-		"Holistic medicine",
-		"FPTP",
-		"Brighton council",
-		"Single issue party",
-		"Forced gender leadership",
-		"Open door immigration"
-	];
-
-	var fieldsToCondenseFor =
-	[
-		"Favour renationalisation",
-		"Tuition fees",
-		"AGW",
-		"Citizens income",
-		"Other"
-	];
-
-	d3.csv("all.csv", function (csv)
-	{
-		for( var index = 0; index < csv.length; index++ )
-		{
-			var row = csv[index];
-			row["Important policies"] = row["Important policies"].split( ", " );
-			row["Against policies"] = row["Against policies"].split( ", " );
-			row["Approval policies"] = row["Approval policies"].split( ", " );
-			row["Key issues by name"] = row["Key issues by name"].split( ", " );
-
-			row["Unsolicited negative feedback"] = [];
-			for( var fieldIndex = 0; fieldIndex < fieldsToCondenseAgainst.length; fieldIndex++ )
-			{
-				if( row.hasOwnProperty( fieldsToCondenseAgainst[fieldIndex] ) && row[ fieldsToCondenseAgainst[fieldIndex] ] == "1" )
-				{
-					row["Unsolicited negative feedback"].push( fieldsToCondenseAgainst[fieldIndex] );
-				}
-			}
-
-			row["Unsolicited positive feedback"] = [];
-			for( var fieldIndex = 0; fieldIndex < fieldsToCondenseFor.length; fieldIndex++ )
-			{
-				if( row.hasOwnProperty( fieldsToCondenseFor[ fieldIndex ] ) && row[ fieldsToCondenseFor[ fieldIndex ] ] == "1" )
-				{
-					row["Unsolicited positive feedback"].push( fieldsToCondenseFor[ fieldIndex ] );
-				}
-			}
-			
-			for( var key in row )
-			{
-				if( row.hasOwnProperty(key) && (row[key] == null || row[key] == "" || row[key] == "0" || (isNumber(row[key]) && +row[key] < "0" ) ) )
-				{
-					delete row[key];
-				}
-			}
+			return group;
 		}
-	
-		var data = crossfilter(csv);
-		
-		createPieChart( "#wantGreenToWin", data, 'Want Green to win GE', 4 );
-		createPieChart( "#closestMatchingParty", data, 'Closest matching party', 6 );
-		createPieChart( "#referer", data, 'Origin', 5 );
-		
-		createAgeChart( "#age", data, 'Age' );
-		
-		createCategoryGraph( "#importantPolicies", data, "Important policies" );
-		createCategoryGraph( "#approvalPolicies", data, "Approval policies" );
-		createCategoryGraph( "#againstPolicies", data, "Against policies" );
-		createCategoryGraph( "#keyIssues", data, "Key issues by name" );
 
-		createCategoryGraph( "#unsolicitedPositive", data, "Unsolicited positive feedback" );
-		createCategoryGraph( "#unsolicitedNegative", data, "Unsolicited negative feedback" );
+		function createCategoryGraph(divName, data, columnName) {
+			var chart = dc.rowChart(divName);
 
-		dc.renderAll();
-		
-		$('.loader').hide();
-		$('.mainContent').show();
-	});
-</script>
+			var dimension = data.dimension(function (d) { return d[columnName]; });
+			var group = reduceSumGroup(dimension, columnName);
 
-<style>
-	.dc-chart g.row text {fill: black; }
-	.dc-chart .pie-slice {fill: black; }
-</style>
+			chart
+				.width(graphWidth)
+				.height(graphBarHeight)
+				.dimension(dimension)
+				.group(group)
+				.ordering(function (d) { return -d.value; })
+				.filterHandler(
+					function (dimension, filters) {
+						dimension.filter(null);
 
+						if (filters.length === 0) {
+							dimension.filter(null);
+						}
+						else {
+							dimension.filterFunction(function (d) {
+								if (d) {
+									for (var i = 0; i < d.length; i++) {
+										if (filters.indexOf(d[i]) >= 0) {
+											return true;
+										}
+									}
+								}
+								return false;
+							});
+						}
+
+						return filters;
+					}
+				)
+			;
+
+			graphs[columnName] = chart;
+		}
+
+		function createPieChart(divName, data, columnName, slices) {
+			var dimension = data.dimension(function (d) { return d[columnName]; });
+			var group = dimension.group().reduceSum(function (d) { return 1; });
+
+			group.all = function () {
+				var newObject = [];
+				for (var key in this) {
+					if (this.hasOwnProperty(key) && key != "all") {
+						newObject.push({
+							key: key,
+							value: this[key]
+						});
+					}
+				}
+				return newObject;
+			};
+
+			var chart = dc.pieChart(divName);
+			graphs[columnName] = chart;
+			chart
+					.width(graphWidth)
+					.height(graphHeight)
+					.slicesCap(slices)
+					.innerRadius(50)
+					.legend(dc.legend())
+					.dimension(dimension)
+					.group(group)
+			;
+		}
+
+		function createAgeChart(divName, data, columnName) {
+			var dimension = data.dimension(function (d) { return d[columnName]; });
+			var group = dimension.group().reduceSum(function (d) { return 1; });
+
+			var chart = dc.barChart(divName);
+			graphs[columnName] = chart;
+			chart
+					.width(graphWidth)
+					.height(graphHeight)
+					.x(d3.scale.linear().domain([14, 80]))
+					.xAxisLabel("Age")
+					.yAxisLabel("Count")
+					.dimension(dimension)
+					.group(group)
+			;
+		}
+
+		var numberFormat = d3.format(".2f");
+
+		var fieldsToCondenseAgainst =
+		[
+			"Pro nuclear",
+			"Pro GM",
+			"Practicality of financial policy",
+			"Lack of experience",
+			"Unscientific",
+			"Animal testing",
+			"Holistic medicine",
+			"FPTP",
+			"Brighton council",
+			"Single issue party",
+			"Forced gender leadership",
+			"Open door immigration"
+		];
+
+		var fieldsToCondenseFor =
+		[
+			"Favour renationalisation",
+			"Tuition fees",
+			"AGW",
+			"Citizens income",
+			"Other"
+		];
+
+		d3.csv("all.csv", function (csv) {
+			for (var index = 0; index < csv.length; index++) {
+				var row = csv[index];
+				row["Important policies"] = row["Important policies"].split(", ");
+				row["Against policies"] = row["Against policies"].split(", ");
+				row["Approval policies"] = row["Approval policies"].split(", ");
+				row["Key issues by name"] = row["Key issues by name"].split(", ");
+
+				row["Unsolicited negative feedback"] = [];
+				for (var fieldIndex = 0; fieldIndex < fieldsToCondenseAgainst.length; fieldIndex++) {
+					if (row.hasOwnProperty(fieldsToCondenseAgainst[fieldIndex]) && row[fieldsToCondenseAgainst[fieldIndex]] == "1") {
+						row["Unsolicited negative feedback"].push(fieldsToCondenseAgainst[fieldIndex]);
+					}
+				}
+
+				row["Unsolicited positive feedback"] = [];
+				for (var fieldIndex = 0; fieldIndex < fieldsToCondenseFor.length; fieldIndex++) {
+					if (row.hasOwnProperty(fieldsToCondenseFor[fieldIndex]) && row[fieldsToCondenseFor[fieldIndex]] == "1") {
+						row["Unsolicited positive feedback"].push(fieldsToCondenseFor[fieldIndex]);
+					}
+				}
+
+				for (var key in row) {
+					if (row.hasOwnProperty(key) && (row[key] == null || row[key] == "" || row[key] == "0" || (isNumber(row[key]) && +row[key] < "0"))) {
+						delete row[key];
+					}
+				}
+			}
+
+			var data = crossfilter(csv);
+
+			createPieChart("#wantGreenToWin", data, 'Want Green to win GE', 4);
+			createPieChart("#closestMatchingParty", data, 'Closest matching party', 6);
+			createPieChart("#referer", data, 'Origin', 5);
+
+			createAgeChart("#age", data, 'Age');
+
+			createCategoryGraph("#importantPolicies", data, "Important policies");
+			createCategoryGraph("#approvalPolicies", data, "Approval policies");
+			createCategoryGraph("#againstPolicies", data, "Against policies");
+			createCategoryGraph("#keyIssues", data, "Key issues by name");
+
+			createCategoryGraph("#unsolicitedPositive", data, "Unsolicited positive feedback");
+			createCategoryGraph("#unsolicitedNegative", data, "Unsolicited negative feedback");
+
+			dc.renderAll();
+
+			$('.nav-pills li.menu a').click(
+				function()
+				{
+					$("li.active").removeClass("active");
+					$(this).parent('li').addClass('active');
+				}
+			);
+
+			$('.loader').hide();
+			$('.mainContent').show();
+		});
+	</script>
+	<style>
+		.dc-chart g.row text
+		{
+			fill: black;
+		}
+
+		.dc-chart .pie-slice
+		{
+			fill: black;
+		}
+
+		h3 a:hover
+		{
+			text-decoration: none !important;
+		}
+	</style>
 </body>
 </html>
