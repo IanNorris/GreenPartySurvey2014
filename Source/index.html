@@ -52,6 +52,8 @@
 					<li class="menu active"><a data-scroll="Introduction">Introduction</a></li>
 					<li class="menu"><a data-scroll="Summary">Summary</a></li>
 					<li class="menu"><a data-scroll="Demographics">Demographics</a></li>
+					<li class="menu"><a data-scroll="Policies">Policies</a></li>
+					<li class="menu"><a data-scroll="SingleIssues">Single Isues</a></li>
 					<li class="nav-divider"></li>
 					<li><a href="javascript:dc.filterAll(); dc.renderAll();">Reset all graphs</a></li>
 				</ul>
@@ -77,57 +79,90 @@
 					<h3>Summary</h3>
 
 					<p>Summary goes here</p>
+
+					<div id="wantGreenToWin"></div>
 				</section>
 
 				<section id="Demographics" data-anchor="Demographics">
 					<h3>Demographics</h3>
 
-					<p>Demographics go here</p>
+					<p>Summary of demographics</p>
+
+					<!-- Tabs -->
+					<ul class="nav nav-tabs" role="tablist">
+						<li class="active"><a href="#affiliationPage" role="tab" data-toggle="tab">Affiliation</a></li>
+						<li><a href="#agePage" role="tab" data-toggle="tab">Age</a></li>
+						<li><a href="#refererPage" role="tab" data-toggle="tab">Referer</a></li>
+					</ul>
+
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div class="tab-pane active" id="affiliationPage"><div id="closestMatchingParty"></div></div>
+						<div class="tab-pane" id="agePage"><div id="age"></div></div>
+						<div class="tab-pane" id="refererPage"><div id="referer"></div></div>
+					</div>
 				</section>
-
-				<div id="wantGreenToWin"></div>
-
-				<div id="closestMatchingParty"></div>
-
-				<div id="referer"></div>
 				
-				<div id="importantPolicies"></div>
+				<section id="Policies" data-anchor="Policies">
+					<h3>Policies</h3>
 
-				<div id="approvalPolicies"></div>
+					<p>Blurb about policies</p>
 
-				<div id="againstPolicies"></div>
+					<!-- Tabs -->
+					<ul class="nav nav-tabs" role="tablist">
+						<li class="active"><a href="#importantPage" role="tab" data-toggle="tab">Important</a></li>
+						<li><a href="#popularPage" role="tab" data-toggle="tab">Popular</a></li>
+						<li><a href="#unpopularPage" role="tab" data-toggle="tab">Unpopular</a></li>
+					</ul>
 
-				<div id="keyIssues"></div>
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div class="tab-pane active" id="importantPage"><div id="importantPolicies"></div></div>
+						<div class="tab-pane" id="popularPage"><div id="approvalPolicies"></div></div>
+						<div class="tab-pane" id="unpopularPage"><div id="againstPolicies"></div></div>
+					</div>
+				</section>
+				
+				<section id="SingleIssues" data-anchor="SingleIssues">
+					<h3>Single Issues</h3>
 
-				<div id="unsolicitedPositive"></div>
+					<p>Blurb about single issues</p>
 
-				<div id="unsolicitedNegative"></div>
+					<!-- Tabs -->
+					<ul class="nav nav-tabs" role="tablist">
+						<li class="active"><a href="#keyIssuesPage" role="tab" data-toggle="tab">Key</a></li>
+						<li><a href="#blockersPage" role="tab" data-toggle="tab">Blocking/Uneasy</a></li>
+						<li><a href="#favouritePage" role="tab" data-toggle="tab">Favourite</a></li>
+					</ul>
 
-				<div id="age"></div>
-
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div class="tab-pane active" id="keyIssuesPage"><div id="keyIssues"></div></div>
+						<div class="tab-pane" id="blockersPage"><div id="unsolicitedNegative"></div></div>
+						<div class="tab-pane" id="favouritePage"><div id="unsolicitedPositive"></div></div>
+					</div>
+				</section>
 			</div>
 		</div>
 	</div>
 
 	<script type="text/template" id="graphTemplate">
-		<div class="drop-shadow">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title">{0}</h3>
-				</div>
-				<div class="panel-body">
-					<div id="{1}">
-						<div class="clearfix"></div>
-						<span class="resetParent label label-filter">
-							<a class="reset" href="javascript:graphs[ '{2}' ].filterAll();dc.redrawAll();">reset</a>
-							<span class="reset"> | Current filter: <span class="filter"></span></span>
-						</span>
-					</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">{0}</h3>
+			</div>
+			<div class="panel-body">
+				<div id="{1}">
 					<div class="clearfix"></div>
+					<span class="resetParent label label-filter">
+						<a class="reset" href="javascript:graphs[ '{2}' ].filterAll();dc.redrawAll();">reset</a>
+						<span class="reset"> | Current filter: <span class="filter"></span></span>
+					</span>
 				</div>
-				<div class="panel-footer">
-					{3}
-				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="panel-footer">
+				{3}
 			</div>
 		</div>
 	</script>

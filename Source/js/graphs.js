@@ -39,7 +39,7 @@ var graph_data =
 
 		{
 			type: 'multi',
-			title: 'What are the most important issues to you?',
+			title: 'What are the most important policies to you?',
 			columnName: 'Important policies',
 			divName: 'importantPolicies',
 			description: "TODO",
