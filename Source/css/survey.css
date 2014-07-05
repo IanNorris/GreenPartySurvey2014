@@ -1,0 +1,36 @@
+.sidebar
+{
+	position: fixed;
+	top: 5em;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	display: block;
+	padding: 20px;
+	overflow-x: hidden;
+	overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.dc-chart g.row text
+{
+	fill: black;
+}
+
+.dc-chart .pie-slice
+{
+	fill: black;
+}
+
+h3 a:hover
+{
+	text-decoration: none !important;
+}
+
+.drop-shadow
+{
+	margin-top: .5em;
+	-moz-box-shadow:10px 5px 15px rgba(0,0,0,.5); 
+	-webkit-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+	box-shadow: 10px 5px 15px rgba(0,0,0,.5); /*10px is horizontal offset, 5px is vertical offset, 15px is blur radius and rgba(0,0,0,.5) is shadow color*/
+	margin-bottom: 30px;
+}
