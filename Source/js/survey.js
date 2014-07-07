@@ -194,33 +194,40 @@ function processGraphs( data, json )
 
 var numberFormat = d3.format(".2f");
 
+//Condense these fields into a single column
+//Map of temporary short column names to new 'human readable' column names
 var fieldsToCondenseAgainst =
 [
-	"Pro nuclear",
-	"Pro GM",
-	"Practicality of financial policy",
-	"Lack of experience",
-	"Unscientific",
-	"Animal testing",
-	"Holistic medicine",
-	"FPTP",
-	"Brighton council",
-	"Single issue party",
-	"Forced gender leadership",
-	"Open door immigration"
+	[ "Pro nuclear", "Disapprove of current nuclear policy" ],
+	[ "Pro GM", "Disapprove of current stance on GM foods or GMO" ],
+	[ "Practicality of financial policy", "Unfavourable views on economic policy" ],
+	[ "Lack of experience", "Doubt that the party could effectively run a country" ],
+	[ "Unscientific", "Respondent used the words anti-science, unscientific or similar" ],
+	[ "Animal testing", "Disapprove of the current hardline stance on animal testing" ],
+	[ "Holistic medicine", "Disapprove of policy on availability of holistic/homeopathy on the NHS" ],
+	[ "FPTP", "Voting system prevents voting for primary choice, instead tactically voting to keep something worse out" ],
+	[ "Brighton council", "Disapprove of track record of Brighton council" ],
+	[ "Single issue party", "Green Party as still seen as being a single issue party" ],
+	[ "Forced gender leadership", "Disapprove of policy of positive gender discrimination for party leadership" ],
+	[ "Open door immigration", "Disapprove of open door immigration policy" ],
+	[ "Trident", "Disapprove of current policy on Trident" ],
 ];
 
+//Condense these fields into a single column
+//Map of temporary short column names to new 'human readable' column names
 var fieldsToCondenseFor =
 [
-	"Favour renationalisation",
-	"Tuition fees",
-	"AGW",
-	"Citizens income",
-	"Other"
+	[ "Favour renationalisation", "Approve of renationalization (any of rail, postal, NHS)" ],
+	[ "Tuition fees", "Approve of policy on tuition fees" ],
+	[ "AGW", "Approve of policies to combat climate change" ],
+	[ "Citizens income", "Approve of Citizens income/Universal basic income" ],
+	[ "Prohibition", "Approve of policies to end prohibition of cannabis/hemp" ],
 ];
 
-d3.csv("all.csv", function (csv) {
-	for (var index = 0; index < csv.length; index++) {
+d3.csv("all.csv", function (csv)
+{
+	for( var index = 0; index < csv.length; index++ )
+	{
 		var row = csv[index];
 		row["Important policies"] = row["Important policies"].split(", ");
 		row["Against policies"] = row["Against policies"].split(", ");
@@ -228,21 +235,27 @@ d3.csv("all.csv", function (csv) {
 		row["Key issues by name"] = row["Key issues by name"].split(", ");
 
 		row["Unsolicited negative feedback"] = [];
-		for (var fieldIndex = 0; fieldIndex < fieldsToCondenseAgainst.length; fieldIndex++) {
-			if (row.hasOwnProperty(fieldsToCondenseAgainst[fieldIndex]) && row[fieldsToCondenseAgainst[fieldIndex]] == "1") {
-				row["Unsolicited negative feedback"].push(fieldsToCondenseAgainst[fieldIndex]);
+		for( var fieldIndex = 0; fieldIndex < fieldsToCondenseAgainst.length; fieldIndex++ )
+		{
+			if (row.hasOwnProperty(fieldsToCondenseAgainst[fieldIndex][0]) && row[fieldsToCondenseAgainst[fieldIndex][0]] == "1")
+			{
+				row["Unsolicited negative feedback"].push(fieldsToCondenseAgainst[fieldIndex][1]);
 			}
 		}
 
 		row["Unsolicited positive feedback"] = [];
-		for (var fieldIndex = 0; fieldIndex < fieldsToCondenseFor.length; fieldIndex++) {
-			if (row.hasOwnProperty(fieldsToCondenseFor[fieldIndex]) && row[fieldsToCondenseFor[fieldIndex]] == "1") {
-				row["Unsolicited positive feedback"].push(fieldsToCondenseFor[fieldIndex]);
+		for( var fieldIndex = 0; fieldIndex < fieldsToCondenseFor.length; fieldIndex++ )
+		{
+			if (row.hasOwnProperty(fieldsToCondenseFor[fieldIndex][0]) && row[fieldsToCondenseFor[fieldIndex][0]] == "1")
+			{
+				row["Unsolicited positive feedback"].push(fieldsToCondenseFor[fieldIndex][1]);
 			}
 		}
 
-		for (var key in row) {
-			if (row.hasOwnProperty(key) && (row[key] == null || row[key] == "" || row[key] == "0" || (isNumber(row[key]) && +row[key] < "0"))) {
+		for( var key in row )
+		{
+			if( row.hasOwnProperty(key) && (row[key] == null || row[key] == "" || row[key] == "0" || (isNumber(row[key]) && +row[key] < "0")) )
+			{
 				delete row[key];
 			}
 		}
@@ -259,8 +272,8 @@ d3.csv("all.csv", function (csv) {
 		var scrollAnchor = $(this).attr('data-scroll');
 		var scrollPoint = $('section[data-anchor="' + scrollAnchor + '"]').offset().top - 20;
 
-		$(".nav-pills li.active").removeClass("active");
-		$(this).parent('li').addClass('active');
+		//$(".nav-pills li.active").removeClass("active");
+		//$(this).parent('li').addClass('active');
 
 		$('body,html').animate(
 			{
