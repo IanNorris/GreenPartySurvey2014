@@ -8,6 +8,26 @@
 		body{ background-color: honeydew !important; }
 		.mainContent{ display: none; }
 
+		.bs-callout-info {
+		border-left-color: #5bc0de !important;
+		}
+		.bs-callout {
+		background-color: white;
+		padding: 20px;
+		margin: 20px 0;
+		border: 1px solid #eee;
+		border-left-width: 5px;
+		border-radius: 3px;
+		}
+
+		.bs-callout-info h4 {
+		color: #5bc0de !important;
+		}
+		.bs-callout h4 {
+		margin-top: 0;
+		margin-bottom: 5px;
+		}
+
 		/*Spinner/Loader*/
 		*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.loader{position:absolute;top:50%;left:50%;width:200px;height:200px;margin-top:-100px;margin-left:-100px;
 		perspective:200px;transform-type:preserve-3d}.dot{position:absolute;top:50%;left:50%;width:120px;height:120px;margin-top:-60px;margin-left:-60px;border-radius:100px;border:40px outset #1e3f57;
@@ -33,9 +53,11 @@
 	</div>
 
 	<!--Fork me button -->
-	<a href="https://github.com/IanNorris/GreenPartySurvey2014"><img style="position: absolute; top: 0; right: 0; border: 0;" 
-	src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" 
-	alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+	<a href="https://github.com/IanNorris/GreenPartySurvey2014">
+		<img style="position: absolute; top: 0; right: 0; border: 0;"
+			 src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67"
+			 alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">
+	</a>
 
 	<div class="container mainContent">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -54,6 +76,7 @@
 					<li class="menu"><a data-scroll="Demographics">Demographics</a></li>
 					<li class="menu"><a data-scroll="Policies">Policies</a></li>
 					<li class="menu"><a data-scroll="SingleIssues">Single Issues</a></li>
+					<li class="menu"><a data-scroll="Methodology">Methodology</a></li>
 					<li class="nav-divider"></li>
 					<li><a href="javascript:dc.filterAll(); dc.renderAll();">Reset all graphs</a></li>
 				</ul>
@@ -68,29 +91,68 @@
 					<h3>Introduction</h3>
 
 					<p>
-						These are the results of an unofficial survey to investigate the reasons why people are and are not voting Green.
-						It was created by Green Party members, but not in an official capacity. There were 314 responses, the majority of which
+						These are the results of an <b>unofficial</b> survey to investigate the reasons why people are and are not voting Green.
+						It was created by Green Party members, but not in an official capacity. There were 312 responses*, the majority of which
 						came from social media such as Reddit, Facebook and Twitter. For this reason the survey is not fully representative of
-						the population however is good enough to be able to draw certain conclusions. These will be outlined below.
+						the general population; however is good enough to be able to draw certain conclusions - these will be outlined below.
+					</p>
+					<p>
+						* &lt;1% of results were trimmed because they either contained hateful remarks with no other value, were blank or duplicates.
 					</p>
 
-					<br/>
+					<br />
 				</section>
+
+
 
 				<section id="Summary" data-anchor="Summary">
 					<h3>Summary</h3>
 
-					<p>Summary goes here</p>
-
 					<div id="wantGreenToWin"></div>
 
-					<br/>
+					<p>
+						There are several conclusions that can be drawn from the results:
+					</p>
+
+					<ul>
+						<li>46% (of the total survey population) would like the Green Party to win without any changes to policy.</li>
+						<li>66% would like the Green Party to win if a few policy changes were made.</li>
+						<li>The top blocking issues to voting for the party are:
+							<ul>
+								<li>Disapproval of the current nuclear policy - with a whopping 53% of all responses (over half of all responses mentioned this in the free text). This rises to 70% amongst those who indicate they would vote for the party if changes were made. There was no agreement of the current nuclear policy at all within the survey sample.</li>
+								<li>Disapproval of the current stance on GM foods or GMO - 27% of the responses included a comment about this in free text areas.</li>
+								<li>Disapproval of the current stance on GM foods or GMO - 27% of the responses included a comment about this in free text areas.</li>
+								<li>11% of all responses used phrases similar to 'unscientific' or 'anti-science' in their free text areas to describe the party or their policies.</li>
+								<li>9% of all responses did not think the economic policy was feasible or had similar unfavourable views on economic policy.</li>
+								<li>6% of all responses disagreed with an 'open door' immigration policy, some made references to this being incompatible with citizens income.</li>
+							</ul>
+						</li>
+						<li>25% of those that do not want the Green Party to win, indicated their closest matching party on ISideWith is the Green Party - this indicates that factors other than broad policy are preventing votes.</li>
+						<li>30% of those that do not want the Green Party identify with UKIP.</li>
+						<li>The most important policies vary across the demographic. The overall most important policy was Economy followed by Health &amp; The NHS. Party <i>members</i> put Equality first; UKIP supporters put Immigration first (unsurprisingly).</li>
+						<li>The most popular Green Party policies are Health &amp; The NHS, Equality and the Environment. This tracks against all voting intentions apart from those who indicated they were members, where Environment, Health &amp; The NHS and Economy took the top three spots.</li>
+						<li>The least popular policies are Energy, Science &amp; Technology and Economy. This mostly tracks across all voting intentions apart from UKIP where Energy, Immigration and Europe were the least popular policies.</li>
+
+						<li>The key single issues for most respondents were Reform of the voting system, Fighting against corporate lobbying and Making climate change a priority. This tracks across all demographics (Green party members identified climate change as the top priority of the three though).</li>
+						<li>The favourite key issues identified by open text areas were policies to combat climate change, approval of citizens income (universal basic income), renationalization and legalisation of cannabis/hemp. Conservative and UKIP voters do not share the enthusiasm for renationalisation or climate change.</li>
+					</ul>
+
+					<p>If you find more interesting conclusions, please leave a comment here <a href="XYZ" target="_blank">on this Reddit post</a> and I'll include it above and credit you.
+
+					<p>The most striking conclusion from the results are that: people <i>really</i> don't like the current policies on nuclear policy and GM(O). This tracks with the anecdotal evidence collected which prompted the study and formed our original hypothesis.
+						Another striking finding is the sheer number of people aged 17 who completed the survey. We are hoping that this is a sign for a good 2015 general election turnout.
+					</p>
+
+					<br />
 				</section>
 
 				<section id="Demographics" data-anchor="Demographics">
 					<h3>Demographics</h3>
 
-					<p>Summary of demographics</p>
+					<p>
+						The demographics of the survey indicate who participated in the study. The results of the age demographic are really surprising - a significant portion of the responses were age 17. This is particulatly interesting given
+						this demographic tracks as one of the least politically engaged. This is encouraging as it means this group <i>is</i> engaged in politics, just not with the major parties.
+					</p>
 
 					<!-- Tabs -->
 					<ul class="nav nav-tabs" role="tablist">
@@ -106,13 +168,13 @@
 						<div class="tab-pane" id="refererPage"><div id="referer"></div></div>
 					</div>
 
-					<br/>
+					<br />
 				</section>
-				
+
 				<section id="Policies" data-anchor="Policies">
 					<h3>Policies</h3>
 
-					<p>Blurb about policies</p>
+					<p>Policies were listed out for the responder to choose a small selection from. This was intended to make people think hard about what really matters to them rather than blindly ticking all the boxes in agreement or disagreement.</p>
 
 					<!-- Tabs -->
 					<ul class="nav nav-tabs" role="tablist">
@@ -128,13 +190,18 @@
 						<div class="tab-pane" id="unpopularPage"><div id="againstPolicies"></div></div>
 					</div>
 
-					<br/>
+					<br />
 				</section>
-				
+
 				<section id="SingleIssues" data-anchor="SingleIssues">
 					<h3>Single Issues</h3>
 
-					<p>Blurb about single issues</p>
+					<p>
+						Single Issues are topics which are too specific or high profile to fall into a policy category.
+						Key policies were listed out by the survey organizers based on what we saw as potential reasons
+						for switching from major parties. Blocking/Uneasy/Favourite single issues were not given to the responder -
+						all responses were given unprompted (and then grouped into a broadly named topic).
+					</p>
 
 					<!-- Tabs -->
 					<ul class="nav nav-tabs" role="tablist">
@@ -150,10 +217,64 @@
 						<div class="tab-pane" id="favouritePage"><div id="unsolicitedPositive"></div></div>
 					</div>
 
-					<br/>
+					<br />
+				</section>
+
+				<section id="Methodology" data-anchor="Methodology">
+					<h3>Methodology</h3>
+
+					<p>
+						Despite starting with an initial hypothesis, we set out to conduct the research in a way that could not be seen as leading
+						to get the result we want. It is for this reason that many of our questions were open-ended and allowed for a lot of input from
+						the participant.
+					</p>
+
+					<div class="bs-callout bs-callout-info">
+						<h4>Hypothesis</h4>
+						<p>Voters are put off voting for the Green Party due to a number of policies seen as 'anti-science'. These includes hardline stances against nuclear power and GM(O).</p>
+					</div>
+
+					<p>
+						We were expecting some confirmation of this reason, but the actual results collected were staggering.
+					</p>
+
+					<p>
+						To give high quality survey results with as much transparency as possible we version tracked changes to the data past a certain point. This was done once the email addresses and
+						open questions had been processed - this data could potentially have been used to identify the individual.
+					</p>
+
+					<h4>Processing data prior to versioning</h4>
+					<ul>
+						<li>E-mail addresses removed and stored separately.</li>
+						<li>
+							Open text fields were then processed in order and columns were created in the table (such as 'Pro nuclear' and 'Single issue party') as trends were identified. In the interest of
+							transparency, issues which are very low in frequency may have been accidentally trimmed at this point as columns were only created once multiple people had identified the same issue.
+							This 'bucketing' of issues (both for and against the party) was done manually and was not automated. This allows much clearer identification of intent. Any additional thoughts of note
+							were added to a Notes column for future reference.
+						</li>
+						<li>Free text blocks were removed.</li>
+						<li>Data was then committed to Git.</li>
+					</ul>
+
+					<h4>Processing data after committing to Git</h4>
+					<ul>
+						<li>Multiple choice questions with 'Other' fields were then processed.</li>
+						<li>Items that fitted into an existing bucket (for example Tax into Economy) were renamed.</li>
+						<li>Where relevant if an item had wider scope than the original groupings, the grouping was widened (for example Defence into Defence &amp; Foreign Policy.</li>
+						<li>New items were created where one did not exist previously (for example Electoral and constitutional reform)</li>
+						<li>Particularly unusual or uncommon responses were removed or added to the Notes column. This accounts for a fraction of 1% of the data.</li>
+					</ul>
+
+					<br />
 				</section>
 			</div>
 		</div>
+
+		<footer>
+			This page was created with <a href="https://github.com/dc-js/dc.js" target="_blank">dc.js</a>, <a href="http://jquery.com/" target="_blank">jQuery</a> and <a href="http://getbootstrap.com/" target="_blank">bootstrap</a>.
+			The bootstrap theme is a slightly tweaked version of <a href="http://bootswatch.com/flatly/#" target="_blank">Flatly</a>.
+			Loading spinner by <a href="http://codepen.io/TheDutchCoder/pen/hzDqw" target="_blank">Reinier Kaper</a> via <a href="http://codepen.io/collection/HtAne/" target="_blank">CodePen Loaders and Spinners</a>.
+		</footer>
 	</div>
 
 	<script type="text/template" id="graphTemplate">
