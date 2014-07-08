@@ -24,7 +24,7 @@ var graph_data =
 			type: 'pie',
 			title: 'How did you find this survey?',
 			columnName: 'Origin',
-			divName: 'referer',
+			divName: 'referrer',
 			description: "How did the responder find this survey? Reddit is by far the largest social network in the group as it has the largest immediate network for popular posts. I'm also glad to see a good turnout from the Green Party forms, meaning their voice of current members is well represented, although more people indicated they were Green Party members came from other sources.",
 			slices: 5,
 		},
@@ -47,7 +47,7 @@ var graph_data =
 
 		{
 			type: 'multi',
-			title: 'What Green Party policies do you most approve of?',
+			title: 'What Green Party policies do you approve of the most?',
 			columnName: 'Approval policies',
 			divName: 'approvalPolicies',
 			description: "These are policies that the responder picked out as things the party is doing particularly well and are of relevance to them personally. These are policies that will contribute to a Yes vote for the Green Party.",
@@ -55,7 +55,7 @@ var graph_data =
 
 		{
 			type: 'multi',
-			title: 'What Green Party policies do you most disapprove of?',
+			title: 'What Green Party policies do you disapprove of the most?',
 			columnName: 'Against policies',
 			divName: 'againstPolicies',
 			description: "These are policies that the responder highlighted as disagreeing or disapproving of. These are policies which will contribute to a No vote (a vote for another party).",
